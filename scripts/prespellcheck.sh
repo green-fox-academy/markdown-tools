@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ln -s lint/.spelling .
+ln -nsf lint/.spelling .
