@@ -8,7 +8,10 @@
     "stylecheck": "remark lint/ -f",
     "spellcheck": "mdspell 'lint/**/*.md' '!**/node_modules/**/*.md' -d all -r",
     "prespellcheck": "./scripts/prespellcheck.sh",
-    "lint": "npm run spellcheck && npm run stylecheck"
+    "lint": "npm run spellcheck && npm run stylecheck",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
   },
   "repository": {
     "type": "git",
@@ -37,5 +40,8 @@
     "remark-lint-no-reference-like-url": "^1.0.2",
     "remark-lint-no-tabs": "^1.0.2",
     "remark-preset-lint-markdown-style-guide": "^2.1.2"
+  },
+  "devDependencies": {
+    "generate-changelog": "^1.7.1"
   }
 }
