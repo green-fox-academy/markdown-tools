@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "./scripts/postinstall.sh",
     "stylecheck": "remark lint/ -f",
-    "spellcheck": "mdspell 'lint/**/*.md' '!**/node_modules/**/*.md' -d all -r",
+    "spellcheck": "mdspell 'lint/**/*.md' '!**/node_modules/**/*.md' --dictionary all --report --ignore-numbers",
     "prespellcheck": "./scripts/prespellcheck.sh",
     "lint": "npm run spellcheck && npm run stylecheck",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
