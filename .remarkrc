@@ -15,6 +15,9 @@
     "lint-no-reference-like-url",
     "lint-no-tabs",
     "lint-checkbox-content-indent"
-  ]
+  ],
+  "settings": {
+    "listItemIndent": 1
+  }
 }
 
