@@ -8,3 +8,4 @@ COPY dictionaries dictionaries
 RUN npm install --quiet --unsafe-perm --production
 
 COPY .remarkrc .
+COPY .prettierrc .
