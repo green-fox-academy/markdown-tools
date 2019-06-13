@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "postinstall": "./scripts/postinstall.sh",
-    "stylefix": "prettier --write lint/**/*.md && remark lint/ -f -o",
+    "stylefix": "prettier --write 'lint/**/*.md' && remark lint/ -f -o",
     "stylecheck": "remark lint/ -f",
     "spellcheck": "mdspell 'lint/**/*.md' '!**/node_modules/**/*.md' --dictionary all --report --ignore-numbers",
     "prespellcheck": "./scripts/prespellcheck.sh",
