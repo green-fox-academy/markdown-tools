@@ -16,8 +16,15 @@
     "lint-no-heading-content-indent",
     "lint-no-paragraph-content-indent",
     "lint-no-reference-like-url",
-    "lint-no-tabs",
-    ["lint-table-pipe-alignment", false],
-    "lint-checkbox-content-indent",
-  ]
+    "lint-no-tabs"
+  ],
+  "settings": {
+    "bullet": "-",
+    "commonmark": true,
+    "emphasis": "*",
+    "incrementListMarker": false,
+    "listItemIndent": 1,
+    "rule": "-",
+    "ruleSpaces": false
+  }
 }
