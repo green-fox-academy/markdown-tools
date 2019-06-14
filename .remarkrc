@@ -1,6 +1,8 @@
 {
   "plugins": [
     "remark-preset-lint-markdown-style-guide",
+    ["lint-no-duplicate-headings", false],
+    ["lint-no-duplicate-headings-in-section", true],
     "lint",
     "lint-final-newline",
     ["lint-no-missing-blank-lines", {"exceptTightLists": true}],
@@ -16,7 +18,5 @@
     "lint-no-tabs",
     ["lint-table-pipe-alignment", false],
     "lint-checkbox-content-indent",
-    ["lint-no-duplicate-headings", false]
   ]
 }
-
