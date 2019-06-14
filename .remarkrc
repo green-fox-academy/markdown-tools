@@ -1,6 +1,8 @@
 {
   "plugins": [
     "remark-preset-lint-markdown-style-guide",
+    ["no-duplicate-headings", false],
+    ["no-duplicate-headings-in-section", true],
     "lint",
     "lint-final-newline",
     ["lint-no-missing-blank-lines", {"exceptTightLists": true}],
@@ -17,10 +19,12 @@
     "lint-checkbox-content-indent"
   ],
   "settings": {
+    "commonmark": true,
     "listItemIndent": 1,
     "bullet": "-",
     "incrementListMarker": false,
-    "emphasis": "*"
+    "emphasis": "*",
+    "rule": "-",
+    "ruleSpaces": false
   }
 }
-
