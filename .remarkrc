@@ -18,5 +18,14 @@
     "lint-no-paragraph-content-indent",
     "lint-no-reference-like-url",
     "lint-no-tabs"
-  ]
+  ],
+  "settings": {
+    "bullet": "-",
+    "commonmark": true,
+    "emphasis": "*",
+    "incrementListMarker": false,
+    "listItemIndent": 1,
+    "rule": "-",
+    "ruleSpaces": false
+  }
 }
