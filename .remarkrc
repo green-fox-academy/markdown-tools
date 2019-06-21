@@ -12,6 +12,7 @@
     "lint-list-item-content-indent",
     ["lint-list-item-indent", "space"],
     ["lint-maximum-heading-length", false],
+    ["lint-maximum-line-length", 80],
     "lint-no-heading-indent",
     "lint-no-heading-content-indent",
     "lint-no-paragraph-content-indent",
