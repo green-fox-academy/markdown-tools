@@ -14,7 +14,8 @@
     "lint-no-reference-like-url",
     "lint-no-tabs",
     ["lint-table-pipe-alignment", false],
-    "lint-checkbox-content-indent"
+    "lint-checkbox-content-indent",
+    ["lint-no-duplicate-headings", false]
   ]
 }
 
