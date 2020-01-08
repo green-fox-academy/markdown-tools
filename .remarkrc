@@ -1,22 +1,26 @@
 {
   "plugins": [
     "remark-preset-lint-markdown-style-guide",
-    ["lint-no-duplicate-headings", false],
-    ["lint-no-duplicate-headings-in-section", true],
     "lint",
-    "lint-final-newline",
-    ["lint-no-missing-blank-lines", {"exceptTightLists": true}],
     ["lint-checkbox-character-style", {"checked": "x", "unchecked": " "}],
-    ["lint-list-item-spacing", false],
+    "lint-checkbox-content-indent",
+    "lint-final-newline",
     "lint-list-item-bullet-indent",
     "lint-list-item-content-indent",
     ["lint-list-item-indent", "space"],
+    ["lint-list-item-spacing", false],
     ["lint-maximum-heading-length", false],
     ["lint-maximum-line-length", 80],
-    "lint-no-heading-indent",
+    ["lint-no-duplicate-headings", false],
+    ["lint-no-duplicate-headings-in-section", true],
     "lint-no-heading-content-indent",
+    "lint-no-heading-indent",
+    ["lint-no-missing-blank-lines", {"exceptTightLists": true}],
     "lint-no-paragraph-content-indent",
     "lint-no-reference-like-url",
     "lint-no-tabs"
-  ]
+  ],
+  "settings": {
+    "commonmark": true
+  }
 }
