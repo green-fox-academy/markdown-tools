@@ -1,3 +1,4 @@
 node_modules
-all.aff
-all.dic
+*.aff
+*.dic
+

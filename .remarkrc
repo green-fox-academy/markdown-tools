@@ -21,6 +21,12 @@
     "lint-no-tabs"
   ],
   "settings": {
-    "commonmark": true
+    "bullet": "-",
+    "commonmark": true,
+    "emphasis": "*",
+    "incrementListMarker": false,
+    "listItemIndent": 1,
+    "rule": "-",
+    "ruleSpaces": false
   }
 }
