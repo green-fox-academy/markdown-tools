@@ -4,8 +4,9 @@
   "description": "A simple tool-set for linting errors in markdown files",
   "main": "",
   "scripts": {
-    "postinstall": "./scripts/postinstall.sh",
     "stylefix": "prettier --write 'lint/**/*.md' && remark lint/ -f -o",
+    "postinstall": "npm run build && ./scripts/postinstall.sh",
+    "build": "tsc",
     "stylecheck": "remark lint/ -f",
     "spellcheck": "mdspell 'lint/**/*.md' '!**/node_modules/**/*.md' --dictionary all --report --ignore-numbers",
     "prespellcheck": "./scripts/prespellcheck.sh",
@@ -16,6 +17,9 @@
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
+  },
+  "bin": {
+    "markdown-tools": "./bin/index.js"
   },
   "repository": {
     "type": "git",
