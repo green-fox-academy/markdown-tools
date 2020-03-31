@@ -1,21 +1,9 @@
-# Markdown tools
+# `markdown-tools`
 
-## Build the image
+A checker and code generation tool for our markdown formatted materials.
 
-```bash
-docker build -t greenfox/markdown-tools:latest .
-```
+## Install
 
-## Push to Docker Hub
+### If you have NodeJS and NPM
 
-Use the `foxyfox` DockerHub user to add yourself to the greenfox organization.
-
-```bash
-docker login
-```
-
-Hopefully you'll get Login Succeeded.
-
-```bash
-docker push greenfox/markdown-tools:latest
-```
+`npm install -g https://github.com/green-fox-academy/markdown-tools`
