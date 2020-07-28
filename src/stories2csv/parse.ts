@@ -79,7 +79,6 @@ const validateStories = (treeList: Parent[]): void => {
 
 const validateStory = (tree: Parent, index: number): void => {
   const line = tree.children[0]?.position?.start?.line;
-  console.log(tree.children);
   if (select(SELECTOR.MAIN_HEADER, tree) === null) {
     throw new Error(`No title in story #${index} at line: ${line}`);
   }

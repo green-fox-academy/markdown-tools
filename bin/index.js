@@ -2,6 +2,6 @@
 
 'use strict';
 
-const { runCli } = require('../dist/cli.js');
+const { runCli } = require('../dist/src/cli.js');
 
-process.exit(runCli(process.argv));
+runCli(process.argv).then(process.exit);
