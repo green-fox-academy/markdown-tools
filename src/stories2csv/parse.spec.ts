@@ -17,8 +17,8 @@ More details
     stories: [{
       title: 'First Story',
       valueStatement: 'As somebody, I can do something, so I am happy',
-      description: 'More details\n',
-      acceptanceCriteria: '- It should be awesome\n',
+      description: 'More details',
+      acceptanceCriteria: '- It should be awesome',
       defintionOfDone: '',
       subTasks: [],
     }],
@@ -47,8 +47,8 @@ More details
     stories: [{
       title: 'First Story',
       valueStatement: 'As somebody, I can do something, so I am happy',
-      description: 'More details\n\n- some of this\n- some of that\n',
-      acceptanceCriteria: '- It should be awesome\n',
+      description: 'More details\n\n- some of this\n- some of that',
+      acceptanceCriteria: '- It should be awesome',
       defintionOfDone: '',
       subTasks: [],
     }],
@@ -78,15 +78,15 @@ test('parse two stories', () => {
     stories: [{
       title: 'First Story',
       valueStatement: 'As somebody, I can do something, so I am happy',
-      description: '\n',
-      acceptanceCriteria: '\n',
+      description: '',
+      acceptanceCriteria: '',
       defintionOfDone: '',
       subTasks: [],
     }, {
       title: 'Second Story',
       valueStatement: 'As somebody else, I can do something, so I am happy',
-      description: '\n',
-      acceptanceCriteria: '\n',
+      description: '',
+      acceptanceCriteria: '',
       defintionOfDone: '',
       subTasks: [],
     }],
@@ -124,22 +124,22 @@ test('parse three stories', () => {
     stories: [{
       title: 'First Story',
       valueStatement: 'As somebody, I can do something, so I am happy',
-      description: '\n',
-      acceptanceCriteria: '\n',
+      description: '',
+      acceptanceCriteria: '',
       defintionOfDone: '',
       subTasks: [],
     }, {
       title: 'Second Story',
       valueStatement: 'As somebody else, I can do something, so I am happy',
-      description: '\n',
-      acceptanceCriteria: '\n',
+      description: '',
+      acceptanceCriteria: '',
       defintionOfDone: '',
       subTasks: [],
     }, {
       title: 'Third Story',
       valueStatement: 'As somebody, I can do something else, so I am happy',
-      description: '\n',
-      acceptanceCriteria: '\n',
+      description: '',
+      acceptanceCriteria: '',
       defintionOfDone: '',
       subTasks: [],
     }],
@@ -166,12 +166,12 @@ Do that!`;
     stories: [{
       title: 'First Story',
       valueStatement: 'As somebody, I can do something, so I am happy',
-      description: '\n',
-      acceptanceCriteria: '\n',
+      description: '',
+      acceptanceCriteria: '',
       defintionOfDone: '',
       subTasks: [{
         title: 'First Subtask',
-        description: 'Do that!\n',
+        description: 'Do that!',
       }],
     }],
     errors: [],
@@ -201,15 +201,15 @@ Do this!`;
     stories: [{
       title: 'First Story',
       valueStatement: 'As somebody, I can do something, so I am happy',
-      description: '\n',
-      acceptanceCriteria: '\n',
+      description: '',
+      acceptanceCriteria: '',
       defintionOfDone: '',
       subTasks: [{
         title: 'First Subtask',
-        description: 'Do that!\n',
+        description: 'Do that!',
       }, {
         title: 'Second Subtask',
-        description: 'Do this!\n',
+        description: 'Do this!',
       }],
     }],
     errors: [],
@@ -243,38 +243,21 @@ Do that as well!`;
     stories: [{
       title: 'First Story',
       valueStatement: 'As somebody, I can do something, so I am happy',
-      description: '\n',
-      acceptanceCriteria: '\n',
+      description: '',
+      acceptanceCriteria: '',
       defintionOfDone: '',
       subTasks: [{
         title: 'First Subtask',
-        description: 'Do that!\n',
+        description: 'Do that!',
       }, {
         title: 'Second Subtask',
-        description: 'Do this!\n',
+        description: 'Do this!',
       }, {
         title: 'Third Subtask',
-        description: 'Do that as well!\n',
+        description: 'Do that as well!',
       }],
     }],
     errors: [],
     warnings: [],
   });
 });
-
-test.skip('should throw error if empty file', () => {
-  expect(() => parse('')).toThrow('The file is empty');
-});
-
-test.skip('should throw error if there is no title', () => {
-  expect(() => parse('something')).toThrow('No title in story #0 at line: 1');
-});
-
-/*
-test('should throw error if there is no title in the second', () => {
-  const markdown = `
-#
-  `;
-  expect(() => );
-});
- */

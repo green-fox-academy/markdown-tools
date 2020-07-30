@@ -97,7 +97,7 @@ const getSubtask = (taskTree: Parent): SubTask =>
   });
 
 const getText = (tree: Parent, selector: string): string =>
-  select(selector + ' text', tree)?.value as string;
+  (select(selector + ' text', tree)?.value as string).trim();
 
 const getTextBetween = (tree: Parent, beforeSelector: string, afterSelector: string): string => {
   const beforeNode = select(beforeSelector, tree);
@@ -128,6 +128,7 @@ const wrapToParent = (children: Node[]): Parent =>
 const nodeListToText = (nodes: Node[]): string =>
   unified()
     .use(stringify, STRINGIFY_OPTIONS)
-    .stringify(wrapToParent(nodes));
+    .stringify(wrapToParent(nodes))
+    .trim();
 
 
