@@ -3,8 +3,6 @@ import { parse } from './parse';
 import { transform } from './transform';
 import { generate } from './generate';
 
-console.log('convert');
-
 export const stories2csv = async (argv: string[]) => {
   const contentBuffer = await fs.readFile(argv[4]);
   const content = contentBuffer.toString();
