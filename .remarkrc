@@ -18,7 +18,8 @@
     ["lint-no-missing-blank-lines", {"exceptTightLists": true}],
     "lint-no-paragraph-content-indent",
     "lint-no-reference-like-url",
-    "lint-no-tabs"
+    "lint-no-tabs",
+    ["table-pipe-alignment", false]
   ],
   "settings": {
     "bullet": "-",
