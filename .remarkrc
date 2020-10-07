@@ -19,7 +19,7 @@
     "lint-no-paragraph-content-indent",
     "lint-no-reference-like-url",
     "lint-no-tabs",
-    ["table-pipe-alignment", false]
+    ["lint-table-pipe-alignment", false]
   ],
   "settings": {
     "bullet": "-",
