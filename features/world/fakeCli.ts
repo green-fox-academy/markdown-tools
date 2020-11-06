@@ -10,6 +10,9 @@ export const fakeCli: () => Cli = () => ({
   async run(content: string): Promise<void> {
     console.log(content);
   },
+  async runSilent(content: string): Promise<void> {
+    console.log(content);
+  },
   async readFile(name: string): Promise<string> {
     return name;
   },
@@ -17,4 +20,13 @@ export const fakeCli: () => Cli = () => ({
     console.log(`Set up in ${directory}`);
   },
   async tearDown(): Promise<void> {},
+  async getStdOut(): Promise<string> {
+    return '';
+  },
+  async getStdErr(): Promise<string> {
+    return '';
+  },
+  async getLastExitCode(): Promise<number> {
+    return 0;
+  },
 });

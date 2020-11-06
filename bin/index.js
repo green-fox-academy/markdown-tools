@@ -4,4 +4,7 @@
 
 const { runCli } = require('../dist/src/cli.js');
 
-runCli(process.argv).then(process.exit);
+const { argv, stdout, stderr } = process;
+
+runCli({ argv, stdout, stderr }).then(process.exit);
+

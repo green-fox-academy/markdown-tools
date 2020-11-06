@@ -24,8 +24,8 @@ Feature: Generate Jira importable CSV file from markdown story list
 
       Do something unexpected
       """
-      When the "markdown-tools stories2csv -i stories.md -o stories.csv" command is executed
-      Then the file at "stories.csv", should contain:
+    When the "markdown-tools stories2csv -i stories.md -o stories.csv" command is executed
+    Then the file at "stories.csv", should contain:
       """
       Summary,Issue id,Parent id,Issue Type,Description
       Test Story,1,,Story,"h2.Description
