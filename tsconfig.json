@@ -17,13 +17,12 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true,
     "typeRoots": [ "./types", "./node_modules/@types"],
     "baseUrl": "./src",
     "paths": {
       "@stories2csv": [ "stories2csv/" ]
-    }
-  },
-  "lib": ["es2020"]
+    },
+    "lib": ["es2020"]
+  }
 }

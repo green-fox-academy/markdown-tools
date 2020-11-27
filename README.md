@@ -1,21 +1,31 @@
-# Markdown tools
+# `markdown-tools`
 
-## Build the image
+A checker and code generation tool for our markdown formatted materials.
 
-```bash
-docker build -t greenfox/markdown-tools:latest .
+## Install
+
+### If you have NodeJS and NPM
+
+```shell
+npm install -g https://github.com/green-fox-academy/markdown-tools
 ```
 
-## Push to Docker Hub
+or
 
-Use the `foxyfox` DockerHub user to add yourself to the greenfox organization.
-
-```bash
-docker login
+```shell
+git clone https://github.com/green-fox-academy/markdown-tools
+cd markdown-tools
+npm link
 ```
 
-Hopefully you'll get Login Succeeded.
 
-```bash
-docker push greenfox/markdown-tools:latest
+## Usage
+
+### Generate Jira compatible `csv` from markdown
+
 ```
+markdown-tools stories2csv -i stories.md -o stories.csv
+```
+
+For further details see the `--help` flag on the cli tool or read the `features`.
+
