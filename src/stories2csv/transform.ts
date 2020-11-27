@@ -39,7 +39,7 @@ const getStoryDescription = (story: Story) => {
    story.description,
    ACCEPTANCE_TITLE,
    story.acceptanceCriteria,
-  ].join(EOL);
+  ].join(EOL)//.replace(new RegExp(EOL, 'g'), EOL + '\\\\ ');
 };
 
 const getSubtasks = ({story, storyId, counter}: {story: Story, storyId: string, counter: () => number}) =>

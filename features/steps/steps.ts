@@ -35,6 +35,11 @@ Then('it should print to the standard out:', async function (content: string) {
   assert.equal(stdOut, content);
 });
 
+Then('it should print to the standard error:', async function (content: string) {
+  const stdErr: string = await this.cli.getStdErr();
+  assert.equal(stdErr, content);
+});
+
 Then('the last exit code should be {int}', async function (exitCode: number) {
   const lastExitCode: number = await this.cli.getLastExitCode();
   assert.equal(lastExitCode, exitCode);

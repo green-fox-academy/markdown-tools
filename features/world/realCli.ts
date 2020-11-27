@@ -21,7 +21,7 @@ const runCliLine = (line: string): Promise<CommandResult> =>
     });
 
     spawned.stderr.on('data', data => {
-      stdout += data;
+      stderr += data;
     });
 
     spawned.on('close', exitCode => {

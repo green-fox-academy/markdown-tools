@@ -9,12 +9,27 @@ const FEATURES = {
   stories2csv,
 };
 
-const parseArgs = (argv: string[]): Promise<{output: string, args: string[]}> =>
+const parseArgs = (argv: string[]): Promise<{output: string, args: any}> =>
   new Promise((resolve, reject) => {
     yargs
       .strict()
       .demandCommand(1, 'Please specify at least one command!')
-      .command('stories2csv', 'Creates csv file for Jira from markdown story definitions')
+      .command('stories2csv', 'Creates csv file for Jira from markdown story definitions', (yargs) => {
+        return yargs.options({
+          'i': {
+            alias: 'input_file',
+            demandOption: true,
+            type: 'string',
+            requiresArg: true,
+          },
+          'o': {
+            alias: 'output_file',
+            demandOption: true,
+            type: 'string',
+            requiresArg: true,
+          }
+        });
+      })
       .parse(argv, (err: any, args: any, output: any) => {
         if (err) {
           reject({err, args, output});
@@ -25,16 +40,17 @@ const parseArgs = (argv: string[]): Promise<{output: string, args: string[]}> =>
   });
 
 export async function runCli({argv, stdout, stderr}: NodeJS.Process): Promise<number> {
-  if (Object.keys(FEATURES).includes(argv[2])) {
-    await FEATURES[argv[2]](argv);
-    return 0;
-  }
   try {
-    const { output } = await parseArgs(argv.slice(2));
+    const { output, args } = await parseArgs(argv.slice(2));
+    if (args._.length) {
+      await FEATURES[args._[0]](args);
+      stdout.write("" + EOL);
+      return 0;
+    }
     stdout.write(output + EOL);
     return 0;
   } catch ({err, output}) {
-    stdout.write(output + EOL);
+    stderr.write(output + EOL);
     return 1;
   }
 }

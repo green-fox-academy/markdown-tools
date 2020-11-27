@@ -27,6 +27,30 @@ More details
   });
 });
 
+test('parse a single story without value statement', () => {
+  const markdown = `
+# First Story
+
+## Acceptance Criteria
+
+- It should be awesome
+  `;
+
+  expect(parse(markdown)).toEqual({
+    stories: [{
+      title: 'First Story',
+      valueStatement: '',
+      description: '',
+      acceptanceCriteria: '- It should be awesome',
+      defintionOfDone: '',
+      subTasks: [],
+    }],
+    errors: [],
+    warnings: [],
+  });
+});
+
+
 test('parse complex description section', () => {
   const markdown = `
 # First Story

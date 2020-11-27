@@ -18,7 +18,7 @@ interface ParserOutput {
 const SELECTOR = {
   SEPARATOR: 'thematicBreak',
   MAIN_HEADER: 'heading[depth=1]',
-  SECOND_HEADING: 'heading[depth=1] + heading[depth=2]',
+  SECOND_HEADING: 'heading[depth=1] + heading[depth=2]:has(:not(text[value="Acceptance Criteria"]))',
   ACCEPTANCE_HEADING: 'heading:has(text[value="Acceptance Criteria"])',
   TASKS_SECTION_HEADING: 'heading[depth=2]:has(text[value="Tasks"])',
   TASK_HEADING: 'heading[depth=3]',
@@ -97,7 +97,7 @@ const getSubtask = (taskTree: Parent): SubTask =>
   });
 
 const getText = (tree: Parent, selector: string): string =>
-  (select(selector + ' text', tree)?.value as string).trim();
+  (select(selector + ' text', tree)?.value as string ?? '').trim();
 
 const getTextBetween = (tree: Parent, beforeSelector: string, afterSelector: string): string => {
   const beforeNode = select(beforeSelector, tree);

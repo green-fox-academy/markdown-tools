@@ -7,7 +7,7 @@ Feature: Show the features if no command is specified
     Given the package installed
     Given a bash prompt in "test/" as working directory
     When the "markdown-tools" command is executed
-    Then it should print to the standard out:
+    Then it should print to the standard error:
       """
       markdown-tools <command>
 
