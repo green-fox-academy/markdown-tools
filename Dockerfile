@@ -1,4 +1,4 @@
-FROM node:10.22.1-alpine
+FROM --platform=linux/amd64 node:16-alpine
 
 WORKDIR /usr/tools
 
@@ -11,7 +11,7 @@ COPY scripts scripts
 COPY src src
 COPY types types
 COPY dictionaries dictionaries
-RUN npm install --quiet --unsafe-perm --production
+RUN npm install --quiet --unsafe-perm --omit=dev
 
 COPY .remarkrc .
 COPY .prettierrc .
