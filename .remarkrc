@@ -19,7 +19,9 @@
     "lint-no-paragraph-content-indent",
     "lint-no-reference-like-url",
     "lint-no-tabs",
-    ["lint-table-pipe-alignment", false]
+    ["lint-table-pipe-alignment", false],
+    ["lint-table-cell-padding", "consistent"],
+    ["lint-table-pipes", false]
   ],
   "settings": {
     "bullet": "-",
